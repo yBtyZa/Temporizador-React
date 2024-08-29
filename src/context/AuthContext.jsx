@@ -32,8 +32,15 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    const logout = () => {
+        localStorage.removeItem('token');
+        setUser(null);
+        alert('Logout efetuado com sucesso!');
+        window.location.href = '/';
+    };
+
     return (
-        <AuthContext.Provider value={{ user, login }}>
+        <AuthContext.Provider value={{ user, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
