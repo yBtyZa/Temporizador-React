@@ -1,13 +1,12 @@
-import { useAuth } from '../../context/AuthContext'
+import styles from "./styles.module.css";
+import HomePageT from "../../components/templates/HomePageT";
 
-function HomePage () {
-    const { logout } = useAuth()
-    return (
-        <div>
-            <h1>Home Page</h1>
-            <button onClick={logout}>Logout</button>
-        </div>
-    )
+function HomePage() {
+  return (
+    <div className={styles.temporizadorContainer}>
+      <HomePageT />
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;
